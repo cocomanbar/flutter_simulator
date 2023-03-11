@@ -5,10 +5,8 @@ part 'discover_json.g.dart';
 
 @JsonSerializable()
 class DiscoverList {
-  @JsonValue(0)
-  int code;
-  @JsonValue("")
-  String msg;
+  int? code;
+  String? msg;
   DiscoverListData? data;
 
   DiscoverList(this.code, this.msg, this.data);

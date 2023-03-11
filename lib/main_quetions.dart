@@ -1,6 +1,8 @@
 
-// 0.类型转换问题
+// 0.类型转换问题 `json_annotation`
 // json 转 模型，类型一定要准确，不然转化不成功的，不会像oc swift 这种接口是 int key1 模型可以声明 bool key1
+// int? code;  但是接口不返回这个字段， null 也会有错？？？ 
+// Unhandled Exception: type 'Null' is not a subtype of type 'int' in type cast
 
 // 1.pod 版本不一致
 // 增加遍历判断版本的脚本
