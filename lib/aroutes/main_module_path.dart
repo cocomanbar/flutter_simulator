@@ -1,8 +1,8 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_simulator/splash_module/splash_page.dart';
-import 'package:flutter_simulator/guide_module/guide_page.dart';
-import 'package:flutter_simulator/tab_module/tab_page.dart';
+import 'package:flutter_simulator/launch/splash_page.dart';
+import 'package:flutter_simulator/launch/guide_page.dart';
+import 'package:flutter_simulator/tabBar/tab_page.dart';
 
 enum MainModuleRoute {
   splash_page,
