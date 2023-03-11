@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_simulator/modules/discover/discover_page.dart';
+import 'package:flutter_simulator/modules/message/message_page.dart';
+import 'package:flutter_simulator/modules/mine/mine_page.dart';
 import 'package:flutter_simulator/tabBar/tab_item.dart';
 import 'package:flutter_simulator/modules/home/home_page.dart';
 import 'package:flutter_simulator/modules/video/video_page.dart';
@@ -22,9 +25,9 @@ class TabPageState extends State<TabPage>
   final List<Widget> _childenControlles = [
     const HomePage(),
     const VideoPage(),
-    const VideoPage(),
-    const VideoPage(),
-    const VideoPage(),
+    const MessagePage(),
+    const DiscoverPage(),
+    const MinePage(),
   ];
 
   Widget getImage(TabBarType type) {
@@ -66,9 +69,10 @@ class TabPageState extends State<TabPage>
             iconSize: 25.0,
             selectedFontSize: 13.0,
             unselectedFontSize: 13.0,
-            selectedItemColor: Colors.orange,
-            unselectedItemColor: Colors.black,
+            selectedItemColor: const Color.fromARGB(255, 51, 51, 51),
+            unselectedItemColor: const Color.fromARGB(255, 100, 100, 100),
             onTap: (index) {
+              // TextStyle(fontSize: 18, color: ),
               setState(() {
                 _selectIndex = index;
               });

@@ -25,8 +25,10 @@ class HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text(
           '首页',
-          style: TextStyle(fontSize: 18, color: Colors.black),
+          style:
+              TextStyle(fontSize: 18, color: Color.fromARGB(255, 51, 51, 51)),
         ),
+        shadowColor: Colors.white,
       ),
       body: Container(
         color: Colors.white,
