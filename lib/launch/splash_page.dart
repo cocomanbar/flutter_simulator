@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_simulator/aroutes/fsroute.dart';
-import 'package:flutter_simulator/aroutes/main_module_path.dart';
+import 'package:flutter_simulator/route/fsroute.dart';
+import 'package:flutter_simulator/route/main_module_path.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);

@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_simulator/modules/discover/discover_json.dart';
 
 class DiscoverPage extends StatefulWidget {
   const DiscoverPage({Key? key}) : super(key: key);
@@ -20,6 +24,8 @@ class DiscoverPageState extends State<DiscoverPage> {
 
   @override
   Widget build(BuildContext context) {
+    loadJSON();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -29,9 +35,16 @@ class DiscoverPageState extends State<DiscoverPage> {
         ),
         shadowColor: Colors.white,
       ),
-      body: Container(
-        color: Colors.white,
-      ),
+      body: Container(),
     );
+  }
+
+  // 请求数据
+  Future<void> loadJSON() async {
+    String jsonString =
+        await rootBundle.loadString('assets/jsons/discover_list.json');
+    final json = jsonDecode(jsonString);
+    DiscoverList home = DiscoverList.fromJson(json);
+    print("== $home");
   }
 }

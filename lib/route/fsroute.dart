@@ -1,13 +1,10 @@
 // ignore_for_file: file_names
 
-import 'dart:ffi';
-
 import 'package:fluro/fluro.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_simulator/aroutes/main_module_path.dart';
+import 'package:flutter_simulator/route/main_module_path.dart';
 
-// 定义的block需要放置在class外
 typedef FSFluroRouteBlock = void Function(FluroRouter route);
 
 class FSRoute {

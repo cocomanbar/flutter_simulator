@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_simulator/aroutes/fsroute.dart';
+import 'package:flutter_simulator/route/fsroute.dart';
 import 'package:flutter_simulator/launch/launch_page.dart';
 import 'package:flutter_simulator/system_info/system_info.dart';
 
@@ -7,6 +7,11 @@ void main() {
   runApp(const MyApp());
 }
 
+// dev env
+// Flutter 3.7.7 • channel unknown • unknown source
+// Framework • revision 2ad6cd72c0 (3 days ago) • 2023-03-08 09:41:59 -0800
+// Engine • revision 1837b5be5f
+// Tools • Dart 2.19.4 • DevTools 2.20.1
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

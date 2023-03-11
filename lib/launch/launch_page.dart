@@ -1,7 +1,7 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_simulator/aroutes/fsroute.dart';
-import 'package:flutter_simulator/aroutes/main_module_path.dart';
+import 'package:flutter_simulator/route/fsroute.dart';
+import 'package:flutter_simulator/route/main_module_path.dart';
 import 'package:flutter_simulator/Utils/shared_preference.dart';
 import 'package:flutter_simulator/system_info/system_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
