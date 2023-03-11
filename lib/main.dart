@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_simulator/aroutes/fsroute.dart';
-import 'package:flutter_simulator/guide_module/launch_page.dart';
+import 'package:flutter_simulator/launch/launch_page.dart';
 import 'package:flutter_simulator/system_info/system_info.dart';
 
 void main() {

@@ -13,7 +13,7 @@ class SplashPage extends StatefulWidget {
 }
 
 class SplashPageState extends State<SplashPage> {
-  int _count = 5;
+  int _count = 3;
 
   @override
   void initState() {
@@ -27,7 +27,7 @@ class SplashPageState extends State<SplashPage> {
           FSRoute.pop(context);
           FSRoute.navigateTo(context, MainModuleRoute.tab_page.routePath,
               transitionDuration: Duration.zero,
-              transition: TransitionType.fadeIn);
+              transition: TransitionType.inFromBottom);
         }
         _count--;
       });
@@ -48,9 +48,11 @@ class SplashPageState extends State<SplashPage> {
           style: const TextStyle(fontSize: 18, color: Colors.black),
         ),
       ),
-      body: Container(
-        color: Colors.white,
-      ),
+      body: const Center(
+          child: Text(
+        '模拟广告展示，倒计时',
+        style: TextStyle(fontSize: 15, color: Colors.blue),
+      )),
     );
   }
 }
