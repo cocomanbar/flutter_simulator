@@ -7,9 +7,11 @@ part of 'discover_json.dart';
 // **************************************************************************
 
 DiscoverList _$DiscoverListFromJson(Map<String, dynamic> json) => DiscoverList(
-      json['code'] as int,
-      json['msg'] as String,
-      DiscoverListData.fromJson(json['data'] as Map<String, dynamic>),
+      json['code'] as int?,
+      json['msg'] as String?,
+      json['data'] == null
+          ? null
+          : DiscoverListData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$DiscoverListToJson(DiscoverList instance) =>
@@ -21,8 +23,8 @@ Map<String, dynamic> _$DiscoverListToJson(DiscoverList instance) =>
 
 DiscoverListData _$DiscoverListDataFromJson(Map<String, dynamic> json) =>
     DiscoverListData(
-      (json['list'] as List<dynamic>)
-          .map((e) => DiscoverItem.fromJson(e as Map<String, dynamic>))
+      (json['list'] as List<dynamic>?)
+          ?.map((e) => DiscoverItem.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -32,9 +34,9 @@ Map<String, dynamic> _$DiscoverListDataToJson(DiscoverListData instance) =>
     };
 
 DiscoverItem _$DiscoverItemFromJson(Map<String, dynamic> json) => DiscoverItem(
-      json['title'] as String,
-      json['desc'] as String,
-      json['route_path'] as String,
+      json['title'] as String?,
+      json['desc'] as String?,
+      json['route_path'] as String?,
     );
 
 Map<String, dynamic> _$DiscoverItemToJson(DiscoverItem instance) =>

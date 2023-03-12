@@ -45,6 +45,6 @@ class DiscoverPageState extends State<DiscoverPage> {
         await rootBundle.loadString('assets/jsons/discover_list.json');
     final json = jsonDecode(jsonString);
     DiscoverList home = DiscoverList.fromJson(json);
-    print("== $home  == ${home.code ?? 500}");
+    print("== $home");
   }
 }
