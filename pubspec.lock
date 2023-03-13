@@ -193,6 +193,22 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "7.0.0"
+  dio:
+    dependency: "direct main"
+    description:
+      name: dio
+      sha256: "2644a9e0965a7aa3deb09cb8ce4081db4450c178f472818c8cd34216a3070d7b"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "5.0.2"
+  empty_widget:
+    dependency: "direct main"
+    description:
+      name: empty_widget
+      sha256: aad8073e5fb43eadde7007db1e2fea7acd33d0d33cff031e31a6675ca0a3e7fb
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.5"
   fake_async:
     dependency: transitive
     description:

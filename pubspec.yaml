@@ -50,6 +50,11 @@ dependencies:
   # https://pub.dev/packages/fluttertoast
   fluttertoast: ^8.2.1
   
+  # https://pub.dev/packages/empty_widget
+  empty_widget: ^0.0.5
+
+  # https://pub.dev/packages/dio
+  dio: ^5.0.2
 
 dev_dependencies:
   flutter_test:
