@@ -1,8 +1,11 @@
 import 'dart:convert';
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_simulator/modules/discover/discover_detail_page.dart';
 import 'package:flutter_simulator/modules/discover/discover_json.dart';
 import 'package:empty_widget/empty_widget.dart';
+import 'package:flutter_simulator/route/fsroute.dart';
 
 class DiscoverPage extends StatefulWidget {
   const DiscoverPage({Key? key}) : super(key: key);
@@ -13,7 +16,7 @@ class DiscoverPage extends StatefulWidget {
 
 class DiscoverPageState extends State<DiscoverPage> {
   late List<DiscoverItem> itemList = [];
-
+  late String _title = "发现";
   // 如果使用 FutureBuilder 的形式，那么 Future 不能直接在赋值的地方构建，不然会一直走
   // 主要是因为有状态的组件更新时，会一直触发biuld。
   // 所以需要加个变量的形式，避免future 一直创建。
@@ -22,6 +25,14 @@ class DiscoverPageState extends State<DiscoverPage> {
   @override
   void initState() {
     super.initState();
+
+    // test1
+    Handler handle = Handler(
+        type: HandlerType.route,
+        handlerFunc: (context, parameters) {
+          return DicoverDetailPage(string: "YUNI2");
+        });
+    FSRoute.route.define("DiscoverPageState/test", handler: handle);
 
     _getItemListFuture = loadJSON();
   }
@@ -35,10 +46,10 @@ class DiscoverPageState extends State<DiscoverPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          '发现',
-          style:
-              TextStyle(fontSize: 18, color: Color.fromARGB(255, 51, 51, 51)),
+        title: Text(
+          _title,
+          style: const TextStyle(
+              fontSize: 18, color: Color.fromARGB(255, 51, 51, 51)),
         ),
         shadowColor: Colors.white,
       ),
@@ -92,14 +103,34 @@ class DiscoverPageState extends State<DiscoverPage> {
     return Container(
       padding: const EdgeInsets.fromLTRB(0, 10, 10, 0),
       child: ListTile(
-          title: Text(
-            item?.title ?? "",
+        title: Text(
+          item?.title ?? "",
+          style: const TextStyle(
+              fontSize: 18, color: Color.fromARGB(255, 51, 51, 51)),
+        ),
+        subtitle: Text(item?.desc ?? "",
             style: const TextStyle(
-                fontSize: 18, color: Color.fromARGB(255, 51, 51, 51)),
-          ),
-          subtitle: Text(item?.desc ?? "",
-              style: const TextStyle(
-                  fontSize: 14, color: Color.fromARGB(255, 137, 137, 137)))),
+                fontSize: 14, color: Color.fromARGB(255, 137, 137, 137))),
+        onTap: () {
+          // test1
+          FSRoute.navigateTo(context, 'DiscoverPageState/test').then((value) {
+            setState(() {
+              _title = value;
+            });
+          });
+
+          // test2
+          // Navigator.push(
+          //     context,
+          //     MaterialPageRoute(
+          //       builder: (context) => DicoverDetailPage(string: "YUNI"),
+          //     )).then((value) => {
+          //       setState(() {
+          //         _title = value;
+          //       })
+          //     });
+        },
+      ),
     );
   }
 }

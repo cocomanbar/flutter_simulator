@@ -24,8 +24,8 @@ class FSRoute {
   }
 
   /// Pop page
-  static pop(BuildContext context) {
-    Navigator.pop(context);
+  static pop<T extends Object?>(BuildContext context, [T? result]) {
+    Navigator.pop(context, result);
   }
 
   /// Navigate to Page
