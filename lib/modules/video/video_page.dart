@@ -28,7 +28,8 @@ class VideoPageState extends State<VideoPage> {
           style:
               TextStyle(fontSize: 18, color: Color.fromARGB(255, 51, 51, 51)),
         ),
-        shadowColor: Colors.white,
+        shadowColor: const Color.fromRGBO(0, 0, 0, 0),
+        backgroundColor: Colors.lightBlue,
       ),
       body: Container(
         color: Colors.white,
