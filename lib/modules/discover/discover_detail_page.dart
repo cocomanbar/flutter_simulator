@@ -30,8 +30,8 @@ class DicoverDetailPageState extends State<DicoverDetailPage> {
         child: FloatingActionButton(
             child: const Icon(Icons.backpack),
             onPressed: () {
-              //FSRoute.pop(context, "哈哈哈");
-              Navigator.pop(context, 'yyy');
+              FSRoute.pop(context, "哈哈哈");
+              // Navigator.pop(context, 'yyy');
             }),
       ),
     );

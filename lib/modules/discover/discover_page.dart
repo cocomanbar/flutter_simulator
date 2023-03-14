@@ -111,11 +111,14 @@ class DiscoverPageState extends State<DiscoverPage> {
         subtitle: Text(item?.desc ?? "",
             style: const TextStyle(
                 fontSize: 14, color: Color.fromARGB(255, 137, 137, 137))),
-        onTap: () {
+        onTap: () async {
           // test1
-          FSRoute.navigateTo(context, 'DiscoverPageState/test').then((value) {
+          await FSRoute.navigateTo(context, 'DiscoverPageState/test')
+              .then((value) {
             setState(() {
-              _title = value;
+              if (value != null) {
+                _title = value;
+              }
             });
           });
 
